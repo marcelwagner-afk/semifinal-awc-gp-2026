@@ -108,13 +108,16 @@
             position: relative;
             overflow: hidden;
             background: #856FB0;
+            min-height: 50vh;
         }
 
         .hero-poster {
             width: 100%;
+            height: 100%;
+            min-height: 50vh;
             display: block;
             object-fit: cover;
-            object-position: center;
+            object-position: center top;
         }
 
         /* Fallback gradient when no poster image */
@@ -846,6 +849,14 @@
             }
 
             /* --- Hero Banner --- */
+            .hero {
+                min-height: 60vh;
+            }
+
+            .hero-poster {
+                min-height: 60vh;
+            }
+
             .hero-overlay {
                 padding: 2rem 1rem 1.5rem;
             }
@@ -1110,6 +1121,14 @@
             }
 
             /* Hero */
+            .hero {
+                min-height: 65vh;
+            }
+
+            .hero-poster {
+                min-height: 65vh;
+            }
+
             .hero-title {
                 font-size: 1.6rem;
                 letter-spacing: 0.5px;
