@@ -1,0 +1,1750 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artistic World Cup 2026 - Garmisch-Partenkirchen</title>
+    <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #F2EBF0;
+            color: #1E1245;
+            line-height: 1.6;
+        }
+
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        nav.scrolled {
+            background: rgba(255, 255, 255, 0.98);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .nav-logo {
+            font-family: 'Big Shoulders Display', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 900;
+            color: #856FB0;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+            flex-wrap: wrap;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #1E1245;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #D494C1;
+        }
+
+        .language-selector {
+            position: relative;
+        }
+
+        .lang-select {
+            appearance: none;
+            -webkit-appearance: none;
+            background: white;
+            border: 1.5px solid #ddd;
+            border-radius: 8px;
+            padding: 0.5rem 2rem 0.5rem 0.75rem;
+            cursor: pointer;
+            font-size: 0.85rem;
+            color: #1E1245;
+            font-weight: 600;
+            font-family: 'Inter', sans-serif;
+            transition: all 0.3s;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23856FB0' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 0.6rem center;
+        }
+
+        .lang-select:hover {
+            border-color: #856FB0;
+        }
+
+        .lang-select:focus {
+            outline: none;
+            border-color: #D494C1;
+            box-shadow: 0 0 0 3px rgba(212, 148, 193, 0.2);
+        }
+
+        .hero {
+            position: relative;
+            overflow: hidden;
+            background: #856FB0;
+        }
+
+        .hero-poster {
+            width: 100%;
+            display: block;
+            object-fit: cover;
+        }
+
+        /* Fallback gradient when no poster image */
+        .hero-poster[src=""], .hero-poster:not([src]) {
+            display: none;
+        }
+        .hero-poster[src=""]+.hero-overlay, .hero-poster:not([src])+.hero-overlay {
+            min-height: 60vh;
+            background: linear-gradient(135deg, #D494C1 0%, #856FB0 50%, #6B5589 100%);
+        }
+
+        .hero-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: 1;
+            background: linear-gradient(to top, rgba(30,18,69,0.8) 0%, rgba(30,18,69,0.3) 60%, transparent 100%);
+            padding: 3rem 2rem 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            color: white;
+            width: 100%;
+        }
+
+        .hero-disciplines {
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+            opacity: 0.9;
+            line-height: 1.8;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 1rem 2.5rem;
+            font-size: 1rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .btn-primary {
+            background: #856FB0;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #6B5589;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(133, 111, 176, 0.3);
+        }
+
+        .btn-secondary {
+            background: white;
+            color: #856FB0;
+        }
+
+        .btn-secondary:hover {
+            background: #f5f5f5;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        section {
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-family: 'Big Shoulders Display', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            color: #856FB0;
+            margin-bottom: 1rem;
+            letter-spacing: 2px;
+        }
+
+        .section-subtitle {
+            font-size: 1.1rem;
+            color: #555;
+            margin-bottom: 3rem;
+            max-width: 700px;
+        }
+
+        #countdown {
+            background: linear-gradient(135deg, #856FB0 0%, #D494C1 100%);
+            color: white;
+            text-align: center;
+            padding: 4rem 2rem;
+        }
+
+        #countdown .section-title {
+            color: white;
+            margin-bottom: 3rem;
+        }
+
+        .countdown-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+            gap: 1.5rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .countdown-box {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            padding: 1.5rem;
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .countdown-number {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .countdown-label {
+            font-size: 0.85rem;
+            opacity: 0.95;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .card {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            border-top: 4px solid #D494C1;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+        }
+
+        .card-title {
+            font-family: 'Big Shoulders Display', sans-serif;
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #856FB0;
+            margin-bottom: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .card-text {
+            color: #555;
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        .discipline-card {
+            border-top-color: #856FB0;
+        }
+
+        /* Accordion Schedule */
+        .schedule-accordion {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .schedule-day {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+            overflow: hidden;
+            transition: box-shadow 0.3s ease;
+        }
+
+        .schedule-day:hover {
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .schedule-day-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.25rem 1.5rem;
+            cursor: pointer;
+            background: linear-gradient(135deg, #856FB0 0%, #D494C1 100%);
+            color: white;
+            user-select: none;
+            transition: opacity 0.3s;
+        }
+
+        .schedule-day-header:hover {
+            opacity: 0.92;
+        }
+
+        .schedule-day-header h3 {
+            font-family: 'Big Shoulders Display', sans-serif;
+            font-size: 1.2rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin: 0;
+        }
+
+        .schedule-day-header .day-meta {
+            font-size: 0.85rem;
+            opacity: 0.9;
+            font-weight: 500;
+        }
+
+        .schedule-day-header .accordion-icon {
+            font-size: 1.4rem;
+            transition: transform 0.3s ease;
+            flex-shrink: 0;
+            margin-left: 1rem;
+        }
+
+        .schedule-day.open .accordion-icon {
+            transform: rotate(180deg);
+        }
+
+        .schedule-day-body {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease;
+        }
+
+        .schedule-day.open .schedule-day-body {
+            max-height: 3000px;
+        }
+
+        .schedule-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .schedule-table th,
+        .schedule-table td {
+            padding: 0.6rem 1rem;
+            text-align: left;
+            border-bottom: 1px solid #f0f0f0;
+            font-size: 0.9rem;
+        }
+
+        .schedule-table th {
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.78rem;
+            letter-spacing: 1px;
+            color: #856FB0;
+            background: rgba(133, 111, 176, 0.06);
+            position: sticky;
+            top: 0;
+        }
+
+        .schedule-table tbody tr:hover {
+            background: rgba(212, 148, 193, 0.08);
+        }
+
+        .schedule-table td:first-child {
+            font-weight: 600;
+            white-space: nowrap;
+            color: #1E1245;
+            width: 70px;
+        }
+
+        .sched-competition {
+            font-weight: 700;
+            color: #1E1245;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+        }
+
+        .sched-training {
+            color: #666;
+            font-style: italic;
+        }
+
+        .sched-ceremony {
+            color: #856FB0;
+            font-weight: 600;
+            font-style: italic;
+        }
+
+        .sched-break {
+            color: #999;
+            font-style: italic;
+            font-size: 0.85rem;
+        }
+
+        .sched-info {
+            color: #D494C1;
+            font-weight: 600;
+        }
+
+        .schedule-table td.sched-skaters,
+        .schedule-table td.sched-groups {
+            text-align: center;
+            color: #888;
+            font-size: 0.85rem;
+            width: 50px;
+        }
+
+        .schedule-footnote {
+            margin-top: 1.5rem;
+            padding: 1rem;
+            background: #F2EBF0;
+            border-left: 4px solid #D494C1;
+            border-radius: 5px;
+            font-size: 0.9rem;
+            color: #555;
+        }
+
+        .venue-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .feature-item {
+            text-align: center;
+            padding: 1.5rem;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            border-top: 3px solid #D494C1;
+        }
+
+        .feature-item h4 {
+            color: #856FB0;
+            margin-bottom: 0.75rem;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .venue-gallery {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .venue-gallery-large {
+            grid-column: 1 / -1;
+        }
+
+        .venue-gallery-item {
+            position: relative;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .venue-gallery-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .venue-gallery-item img {
+            width: 100%;
+            height: 100%;
+            display: block;
+            object-fit: cover;
+            min-height: 300px;
+        }
+
+        .venue-gallery-large img {
+            min-height: 400px;
+        }
+
+        .venue-gallery-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(30,18,69,0.9) 0%, rgba(30,18,69,0.4) 100%);
+            color: white;
+            padding: 1.5rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+
+        .venue-info-card {
+            margin-bottom: 2rem;
+        }
+
+        .venue-features-minimal {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .feature-tag {
+            display: inline-block;
+            background: linear-gradient(135deg, #856FB0 0%, #D494C1 100%);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .ticket-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .ticket-card {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            border-top: 5px solid #D494C1;
+            transition: all 0.3s ease;
+        }
+
+        .ticket-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+        }
+
+        .ticket-price {
+            font-family: 'Big Shoulders Display', sans-serif;
+            font-size: 2.5rem;
+            color: #856FB0;
+            margin: 1rem 0;
+            font-weight: 900;
+        }
+
+        .ticket-price span {
+            font-size: 1rem;
+            color: #555;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .ticket-description {
+            color: #666;
+            margin-bottom: 1.5rem;
+            font-size: 0.95rem;
+        }
+
+        .tickets-info {
+            background: #F2EBF0;
+            border-left: 4px solid #D494C1;
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin: 2rem 0;
+            text-align: left;
+        }
+
+        .tickets-info p {
+            color: #555;
+            margin-bottom: 0.5rem;
+        }
+
+        .partners-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+            align-items: center;
+            justify-items: center;
+        }
+
+        .partner-item {
+            padding: 1.5rem;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            text-align: center;
+            min-height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .partner-item h4 {
+            color: #856FB0;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .partner-name {
+            font-size: 1.1rem;
+            color: #1E1245;
+            margin-top: 0.5rem;
+            font-weight: 600;
+        }
+
+        .partner-label {
+            font-size: 0.8rem;
+            color: #999;
+            margin-bottom: 0.75rem;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .contact-block {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            border-top: 4px solid #D494C1;
+        }
+
+        .contact-block h4 {
+            color: #856FB0;
+            font-family: 'Big Shoulders Display', sans-serif;
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .contact-block p {
+            color: #555;
+            margin-bottom: 0.5rem;
+            line-height: 1.8;
+        }
+
+        footer {
+            background: #1E1245;
+            color: white;
+            padding: 4rem 2rem 2rem;
+            margin-top: 5rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h5 {
+            font-family: 'Big Shoulders Display', sans-serif;
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #D494C1;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section li {
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-section a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s;
+            font-size: 0.95rem;
+        }
+
+        .footer-section a:hover {
+            color: #D494C1;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 2rem;
+            text-align: center;
+            color: #aaa;
+            font-size: 0.9rem;
+        }
+
+        /* Hamburger Menu Button */
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0.5rem;
+            z-index: 1001;
+        }
+
+        .menu-toggle span {
+            display: block;
+            width: 24px;
+            height: 2.5px;
+            background: #1E1245;
+            margin: 5px 0;
+            border-radius: 2px;
+            transition: all 0.3s ease;
+        }
+
+        .menu-toggle.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+
+        .menu-toggle.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .menu-toggle.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(6px, -6px);
+        }
+
+        /* Tablet */
+        @media (max-width: 1024px) {
+            section {
+                padding: 3rem 1.5rem;
+            }
+
+            .hero-title {
+                font-size: 3rem;
+            }
+
+            .section-title {
+                font-size: 2.2rem;
+            }
+
+            .cards-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .venue-gallery {
+                gap: 1rem;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Mobile */
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+
+            nav {
+                flex-wrap: wrap;
+                padding: 0.75rem 1rem;
+            }
+
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                gap: 0;
+                padding: 1rem 0 0.5rem;
+                order: 3;
+            }
+
+            .nav-links.open {
+                display: flex;
+            }
+
+            .nav-links li {
+                width: 100%;
+            }
+
+            .nav-links a {
+                display: block;
+                padding: 0.75rem 0;
+                border-bottom: 1px solid #f0f0f0;
+                font-size: 1rem;
+            }
+
+            .language-selector {
+                order: 2;
+                margin-left: auto;
+                margin-right: 0.75rem;
+            }
+
+            .hero-title {
+                font-size: 2.2rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1rem;
+            }
+
+            .section-title {
+                font-size: 1.8rem;
+            }
+
+            .section-subtitle {
+                font-size: 1rem;
+            }
+
+            section {
+                padding: 2.5rem 1rem;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .btn {
+                width: 100%;
+                text-align: center;
+            }
+
+            .countdown-container {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1rem;
+            }
+
+            .cards-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .ticket-cards {
+                grid-template-columns: 1fr;
+            }
+
+            /* Scrollbare Tabelle */
+            .table-wrapper {
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+            }
+
+            .schedule-table {
+                min-width: 500px;
+            }
+
+            .schedule-table th,
+            .schedule-table td {
+                padding: 0.5rem 0.4rem;
+                font-size: 0.8rem;
+            }
+
+            .schedule-day-header h3 {
+                font-size: 1rem;
+            }
+
+            .schedule-day-header .day-meta {
+                font-size: 0.75rem;
+            }
+
+            .schedule-day-header {
+                padding: 1rem;
+            }
+
+            .sched-competition {
+                font-size: 0.8rem;
+            }
+
+            /* Venue Gallery */
+            .venue-gallery {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .venue-gallery-item img {
+                min-height: 200px;
+            }
+
+            .venue-gallery-large img {
+                min-height: 250px;
+            }
+
+            /* Partner Grid */
+            .partners-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1rem;
+            }
+
+            .partner-item {
+                padding: 1rem;
+                min-height: 80px;
+            }
+
+            .partner-item img {
+                max-height: 60px !important;
+            }
+
+            /* Footer */
+            .footer-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .footer-section ul {
+                padding: 0;
+            }
+
+            footer {
+                padding: 3rem 1rem 1.5rem;
+            }
+        }
+
+        /* Small phones */
+        @media (max-width: 480px) {
+            .hero-title {
+                font-size: 1.8rem;
+            }
+
+            .section-title {
+                font-size: 1.5rem;
+                letter-spacing: 1px;
+            }
+
+            .countdown-number {
+                font-size: 1.5rem;
+            }
+
+            .card {
+                padding: 1.5rem;
+            }
+
+            .ticket-price {
+                font-size: 2rem;
+            }
+
+            .partners-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-block {
+                padding: 1.5rem;
+            }
+
+            .venue-features-minimal {
+                justify-content: center;
+            }
+
+            .feature-tag {
+                font-size: 0.75rem;
+                padding: 0.4rem 0.8rem;
+            }
+
+            .lang-select {
+                font-size: 0.8rem;
+                padding: 0.4rem 1.5rem 0.4rem 0.5rem;
+            }
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <nav id="navbar">
+        <div class="nav-logo">AWC 2026</div>
+        <button class="menu-toggle" id="menuToggle" aria-label="Menü öffnen">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#disciplines" data-i18n="nav.disciplines">Disziplinen</a></li>
+            <li><a href="#schedule" data-i18n="nav.schedule">Zeitplan</a></li>
+            <li><a href="#venue" data-i18n="nav.venue">Austragungsort</a></li>
+            <li><a href="#tickets" data-i18n="nav.tickets">Tickets</a></li>
+            <li><a href="#contact" data-i18n="nav.contact">Kontakt</a></li>
+        </ul>
+        <div class="language-selector">
+            <select class="lang-select" id="langSelect">
+                <option value="de" selected>Deutsch</option>
+                <option value="en">English</option>
+                <option value="it">Italiano</option>
+                <option value="es">Español</option>
+                <option value="pt">Português</option>
+            </select>
+        </div>
+    </nav>
+
+    <!-- BANNER: Replace src with correct banner image URL -->
+    <section class="hero">
+        <img class="hero-poster" id="hero-poster" src="World_Cup_v2.svg" alt="Artistic World Cup 2026 Garmisch-Partenkirchen">
+        <div class="hero-overlay">
+
+            <div class="hero-buttons">
+                <a href="#tickets" class="btn btn-secondary" data-i18n="hero.getTickets">Tickets kaufen</a>
+                <a href="#schedule" class="btn btn-secondary" data-i18n="hero.viewSchedule">Zeitplan ansehen</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="countdown">
+        <h2 class="section-title" data-i18n="countdown.title">Countdown zum Event</h2>
+        <div class="countdown-container">
+            <div class="countdown-box">
+                <div class="countdown-number" id="days">0</div>
+                <div class="countdown-label" data-i18n="countdown.days">Tage</div>
+            </div>
+            <div class="countdown-box">
+                <div class="countdown-number" id="hours">0</div>
+                <div class="countdown-label" data-i18n="countdown.hours">Stunden</div>
+            </div>
+            <div class="countdown-box">
+                <div class="countdown-number" id="minutes">0</div>
+                <div class="countdown-label" data-i18n="countdown.minutes">Minuten</div>
+            </div>
+            <div class="countdown-box">
+                <div class="countdown-number" id="seconds">0</div>
+                <div class="countdown-label" data-i18n="countdown.seconds">Sekunden</div>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="disciplines">
+        <h2 class="section-title" data-i18n="disc.title">Disziplinen</h2>
+        <p class="section-subtitle" data-i18n="disc.subtitle">Vier Disziplinen, die Kunst und Athletik auf höchstem Niveau vereinen.</p>
+        <div class="cards-grid">
+            <div class="card discipline-card">
+                <h3 class="card-title" data-i18n="disc.free.title">Free Skating (Singles)</h3>
+                <p class="card-text" data-i18n="disc.free.text">Gänsehaut pur – explosive Sprünge, atemberaubende Spins und emotionale Performances, die das Publikum in ihren Bann ziehen – Short Program & Free Program.</p>
+            </div>
+            <div class="card discipline-card">
+                <h3 class="card-title" data-i18n="disc.pairs.title">Pairs</h3>
+                <p class="card-text" data-i18n="disc.pairs.text">Adrenalin, Vertrauen und spektakuläre Elemente – waghalsige Würfe und kraftvolle Hebungen sorgen für pure Spannung und Standing Ovations – Short Program & Free Program.</p>
+            </div>
+            <div class="card discipline-card">
+                <h3 class="card-title" data-i18n="disc.solo.title">Solo Dance</h3>
+                <p class="card-text" data-i18n="disc.solo.text">Feel the beat – mitreißende Rhythmen, starker Ausdruck und einzigartige Persönlichkeiten machen jede Performance zum Publikumsmagneten – Style Dance & Freedance.</p>
+            </div>
+            <div class="card discipline-card">
+                <h3 class="card-title" data-i18n="disc.couples.title">Couples Dance</h3>
+                <p class="card-text" data-i18n="disc.couples.text">Magie im Duo – perfekte Harmonie, fließende Bewegungen und intensive Emotionen schaffen Momente, die unter die Haut gehen – Style Dance & Freedance.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="schedule">
+        <h2 class="section-title" data-i18n="sched.title">Offizieller Zeitplan</h2>
+        <p class="section-subtitle" data-i18n="sched.subtitle">10 Tage Weltklasse-Rollkunstlauf. Vorläufiger Zeitplan von World Skate.</p>
+
+        <div class="schedule-accordion">
+
+        <!-- FRIDAY 08 MAY -->
+        <div class="schedule-day">
+            <div class="schedule-day-header" onclick="this.parentElement.classList.toggle('open')">
+                <div><h3>Friday 08 May</h3><span class="day-meta">Training Day</span></div>
+                <span class="accordion-icon">&#9660;</span>
+            </div>
+            <div class="schedule-day-body"><div class="table-wrapper">
+                <table class="schedule-table">
+                    <thead><tr><th>Time</th><th>Event</th><th>Skaters</th><th>Groups</th></tr></thead>
+                    <tbody>
+                        <tr><td>9:00</td><td class="sched-info">Doors Open</td><td class="sched-skaters"></td><td class="sched-groups"></td></tr>
+                        <tr><td>9:30</td><td class="sched-training">Training Tot Ladies Freeskating</td><td class="sched-skaters">10</td><td class="sched-groups">2</td></tr>
+                        <tr><td>10:30</td><td class="sched-training">Training Tot Men Freeskating</td><td class="sched-skaters">3</td><td class="sched-groups">1</td></tr>
+                        <tr><td>11:00</td><td class="sched-training">Training Mini Ladies Freeskating</td><td class="sched-skaters">23</td><td class="sched-groups">3</td></tr>
+                        <tr><td>12:30</td><td class="sched-training">Training Mini Men Freeskating</td><td class="sched-skaters">4</td><td class="sched-groups">1</td></tr>
+                        <tr><td>13:00</td><td class="sched-training">Training Espoir Ladies Freeskating</td><td class="sched-skaters">24</td><td class="sched-groups">3</td></tr>
+                        <tr><td>14:45</td><td class="sched-training">Training Espoir Men Freeskating</td><td class="sched-skaters">10</td><td class="sched-groups">2</td></tr>
+                        <tr><td>15:55</td><td class="sched-training">Training Tot Ladies Solo Freedance</td><td class="sched-skaters">8</td><td class="sched-groups">1</td></tr>
+                        <tr><td>16:20</td><td class="sched-training">Training Tot Men Solo Freedance</td><td class="sched-skaters">1</td><td class="sched-groups">1</td></tr>
+                        <tr><td>16:45</td><td class="sched-training">Training Mini Ladies Solo Freedance</td><td class="sched-skaters">23</td><td class="sched-groups">3</td></tr>
+                        <tr><td>18:15</td><td class="sched-training">Training Mini Men Solo Freedance</td><td class="sched-skaters">5</td><td class="sched-groups">1</td></tr>
+                        <tr><td>18:40</td><td class="sched-training">Training Espoir Ladies Solo Freedance</td><td class="sched-skaters">30</td><td class="sched-groups">4</td></tr>
+                        <tr><td>20:40</td><td class="sched-training">Training Espoir Men Solo Freedance</td><td class="sched-skaters">10</td><td class="sched-groups">2</td></tr>
+                        <tr><td>21:30</td><td class="sched-info">End of session</td><td class="sched-skaters"></td><td class="sched-groups"></td></tr>
+                    </tbody>
+                </table>
+            </div></div>
+        </div>
+
+        <!-- SATURDAY 09 MAY -->
+        <div class="schedule-day">
+            <div class="schedule-day-header" onclick="this.parentElement.classList.toggle('open')">
+                <div><h3>Saturday 09 May</h3><span class="day-meta">Competition – Tot / Mini / Espoir</span></div>
+                <span class="accordion-icon">&#9660;</span>
+            </div>
+            <div class="schedule-day-body"><div class="table-wrapper">
+                <table class="schedule-table">
+                    <thead><tr><th>Time</th><th>Event</th><th>Skaters</th><th>Groups</th></tr></thead>
+                    <tbody>
+                        <tr><td>8:00</td><td class="sched-info">Doors Open</td><td class="sched-skaters"></td><td class="sched-groups"></td></tr>
+                        <tr><td>8:30</td><td class="sched-competition">Competition Tot Ladies Freeskating</td><td class="sched-skaters">10</td><td class="sched-groups">2</td></tr>
+                        <tr><td>9:40</td><td class="sched-competition">Competition Tot Men Freeskating</td><td class="sched-skaters">3</td><td class="sched-groups">1</td></tr>
+                        <tr><td>10:05</td><td class="sched-break">Break 10 mins</td><td class="sched-skaters"></td><td class="sched-groups"></td></tr>
+                        <tr><td>10:15</td><td class="sched-competition">Competition Mini Ladies Freeskating</td><td class="sched-skaters">23</td><td class="sched-groups">3</td></tr>
+                        <tr><td>12:45</td><td class="sched-competition">Competition Mini Men Freeskating</td><td class="sched-skaters">4</td><td class="sched-groups">1</td></tr>
+                        <tr><td>13:15</td><td class="sched-ceremony">Award Ceremony 15 Mins</td><td class="sched-skaters"></td><td class="sched-groups"></td></tr>
+                        <tr><td>13:30</td><td class="sched-competition">Competition Espoir Ladies Long</td><td class="sched-skaters">24</td><td class="sched-groups">3</td></tr>
+                        <tr><td>16:20</td><td class="sched-competition">Competition Espoir Men Long</td><td class="sched-skaters">10</td><td class="sched-groups">2</td></tr>
+                        <tr><td>17:40</td><td class="sched-break">Break 10 mins</td><td class="sched-skaters"></td><td class="sched-groups"></td></tr>
+                        <tr><td>17:50</td><td class="sched-competition">Competition Tot Ladies Solo Freedance</td><td class="sched-skaters">8</td><td class="sched-groups">1</td></tr>
+                        <tr><td>18:40</td><td class="sched-competition">Competition Tot Men Solo Freedance</td><td class="sched-skaters">1</td><td class="sched-groups">1</td></tr>
+                        <tr><td>18:50</td><td class="sched-ceremony">Award Ceremony 15 Mins</td><td class="sched-skaters"></td><td class="sched-groups"></td></tr>
+                        <tr><td>19:05</td><td class="sched-competition">Competition Mini Ladies Solo Freedance</td><td class="sched-skaters">23</td><td class="sched-groups">3</td></tr>
+                        <tr><td>21:40</td><td class="sched-competition">Competition Mini Men Solo Freedance</td><td class="sched-skaters">5</td><td class="sched-groups">1</td></tr>
+                        <tr><td>22:15</td><td class="sched-ceremony">Award Ceremony 15 Mins</td><td class="sched-skaters"></td><td class="sched-groups"></td></tr>
+                        <tr><td>22:30</td><td class="sched-info">End of session</td><td class="sched-skaters"></td><td class="sched-groups"></td></tr>
+                    </tbody>
+                </table>
+            </div></div>
+        </div>
+
+        <!-- SUNDAY 10 MAY -->
+        <div class="schedule-day">
+            <div class="schedule-day-header" onclick="this.parentElement.classList.toggle('open')">
+                <div><h3>Sunday 10 May</h3><span class="day-meta">Training Solo Dance + Espoir Freedance + Opening Ceremony</span></div>
+                <span class="accordion-icon">&#9660;</span>
+            </div>
+            <div class="schedule-day-body"><div class="table-wrapper">
+                <table class="schedule-table">
+                    <thead><tr><th>Time</th><th>Event</th><th>Skaters</th><th>Groups</th></tr></thead>
+                    <tbody>
+                        <tr><td>7:00</td><td class="sched-info">Doors Open</td><td class="sched-skaters"></td><td class="sched-groups"></td></tr>
+                        <tr><td>7:30</td><td class="sched-training">Training Cadet Ladies Solo Dance</td><td class="sched-skaters">24</td><td class="sched-groups">3</td></tr>
+                        <tr><td>9:00</td><td class="sched-training">Training Cadet Men Solo Dance</td><td class="sched-skaters">12</td><td class="sched-groups">2</td></tr>
+                        <tr><td>10:10</td><td class="sched-training">Training Youth Ladies Solo Dance</td><td class="sched-skaters">20</td><td class="sched-groups">3</td></tr>
+                        <tr><td>11:40</td><td class="sched-training">Training Youth Men Solo Dance</td><td class="sched-skaters">10</td><td class="sched-groups">2</td></tr>
+                        <tr><td>12:30</td><td class="sched-training">Training Junior Men Solo Dance</td><td class="sched-skaters">9</td><td class="sched-groups">2</td></tr>
+                        <tr><td>13:30</td><td class="sched-break">Break 10 mins</td><td class="sched-skaters"></td><td class="sched-groups"></td></tr>
+                        <tr><td>13:40</td><td class="sched-competition">Competition Espoir Ladies Solo Freedance</td><td class="sched-skaters">30</td><td class="sched-groups">4</td></tr>
+                        <tr><td>17:00</td><td class="sched-competition">Competition Espoir Men Solo Freedance</td><td class="sched-skaters">10</td><td class="sched-groups">2</td></tr>
+                        <tr><td>18:10</td><td class="sched-ceremony">Award Ceremony 30 Mins</td><td class="sched-skaters"></td><td class="sched-groups"></td></tr>
+                        <tr><td>18:40</td><td class="sched-ceremony">Opening Ceremony</td><td class="sched-skaters"></td><td class="sched-groups"></td></tr>
+                        <tr><td>19:40</td><td class="sched-training">Training Junior Ladies Solo Dance</td><td class="sched-skaters">23</td><td class="sched-groups">3</td></tr>
+                        <tr><td>21:10</td><td class="sched-training">Training Senior Ladies Solo Dance</td><td class="sched-skaters">28</td><td class="sched-groups">4</td></tr>
+                        <tr><td>23:10</td><td class="sched-training">Training Senior Men Solo Dance</td><td class="sched-skaters">16</td><td class="sched-groups">2</td></tr>
+                        <tr><td>0:10</td><td class="sched-info">End of session</td><td class="sched-skaters"></td><td class="sched-groups"></td></tr>
+                    </tbody>
+                </table>
+            </div></div>
+        </div>
+
+        <!-- MONDAY 11 MAY -->
+        <div class="schedule-day">
+            <div class="schedule-day-header" onclick="this.parentElement.classList.toggle('open')">
+                <div><h3>Monday 11 May</h3><span class="day-meta">Competition – Style Dance</span></div>
+                <span class="accordion-icon">&#9660;</span>
+            </div>
+            <div class="schedule-day-body"><div class="table-wrapper">
+                <table class="schedule-table">
+                    <thead><tr><th>Time</th><th>Event</th><th>Skaters</th><th>Groups</th></tr></thead>
+                    <tbody>
+                        <tr><td>7:00</td><td class="sched-info">Doors Open</td><td class="sched-skaters"></td><td class="sched-groups"></td></tr>
+                        <tr><td>7:30</td><td class="sched-training">Training Cadet Dance Couples</td><td class="sched-skaters">7</td><td class="sched-groups">2</td></tr>
+                        <tr><td>8:40</td><td class="sched-training">Training Youth Dance Couples</td><td class="sched-skaters">4</td><td class="sched-groups">1</td></tr>
+                        <tr><td>9:15</td><td class="sched-competition">Competition Cadet Ladies Style Dance</td><td class="sched-skaters">24</td><td class="sched-groups">3</td></tr>
+                        <tr><td>11:55</td><td class="sched-competition">Competition Cadet Men Style Dance</td><td class="sched-skaters">12</td><td class="sched-groups">2</td></tr>
+                        <tr><td>13:20</td><td class="sched-competition">Competition Youth Ladies Style Dance</td><td class="sched-skaters">20</td><td class="sched-groups">3</td></tr>
+                        <tr><td>15:35</td><td class="sched-competition">Competition Youth Men Style Dance</td><td class="sched-skaters">10</td><td class="sched-groups">2</td></tr>
+                        <tr><td>16:45</td><td class="sched-break">Break 10 mins</td><td class="sched-skaters"></td><td class="sched-groups"></td></tr>
+                        <tr><td>16:55</td><td class="sched-competition">Competition Junior Ladies Solo Style Dance</td><td class="sched-skaters">23</td><td class="sched-groups">3</td></tr>
+                        <tr><td>19:30</td><td class="sched-competition">Competition Junior Men Solo Style Dance</td><td class="sched-skaters">9</td><td class="sched-groups">2</td></tr>
+                        <tr><td>20:35</td><td class="sched-break">Break 10 mins</td><td class="sched-skaters"></td><td class="sched-groups"></td></tr>
+                        <tr><td>20:45</td><td class="sched-competition">Competition Senior Men Solo Style Dance</td><td class="sched-skaters">16</td><td class="sched-groups">2</td></tr>
+                        <tr><td>22:30</td><td class="sched-info">End of session</td><td class="sched-skaters"></td><td class="sched-groups"></td></tr>
+                    </tbody>
+                </table>
+            </div></div>
+        </div>
+
+        <!-- TUESDAY 12 MAY -->
+        <div class="schedule-day">
+            <div class="schedule-day-header" onclick="this.parentElement.classList.toggle('open')">
+                <div><h3>Tuesday 12 May</h3><span class="day-meta">Competition – Solo Freedance + Senior Ladies Style Dance</span></div>
+                <span class="accordion-icon">&#9660;</span>
+            </div>
+            <div class="schedule-day-body"><div class="table-wrapper">
+                <table class="schedule-table">
+                    <thead><tr><th>Time</th><th>Event</th><th>Skaters</th><th>Groups</th></tr></thead>
+                    <tbody>
+                        <tr><td>7:00</td><td class="sched-info">Doors Open</td><td class="sched-skaters"></td><td class="sched-groups"></td></tr>
+                        <tr><td>7:30</td><td class="sched-training">Training Cadet Pairs</td><td class="sched-skaters">4</td><td class="sched-groups">1</td></tr>
+                        <tr><td>8:05</td><td class="sched-training">Training Youth Pairs</td><td class="sched-skaters">4</td><td class="sched-groups">1</td></tr>
+                        <tr><td>8:40</td><td class="sched-training">Training Junior Pairs</td><td class="sched-skaters">6</td><td class="sched-groups">2</td></tr>
+                        <tr><td>9:50</td><td class="sched-training">Training Senior Pairs</td><td class="sched-skaters">6</td><td class="sched-groups">2</td></tr>
+                        <tr><td>11:00</td><td class="sched-competition">Competition Cadet Ladies Solo Freedance</td><td class="sched-skaters">18</td><td class="sched-groups">3</td></tr>
+                        <tr><td>13:15</td><td class="sched-competition">Competition Cadet Men Solo Freedance</td><td class="sched-skaters">12</td><td class="sched-groups">2</td></tr>
+                        <tr><td>14:45</td><td class="sched-break">Break 10 mins</td><td class="sched-skaters"></td><td class="sched-groups"></td></tr>
+                        <tr><td>14:55</td><td class="sched-competition">Competition Youth Ladies Solo Freedance</td><td class="sched-skaters">18</td><td class="sched-groups">3</td></tr>
+                        <tr><td>17:15</td><td class="sched-competition">Competition Youth Men Solo Freedance</td><td class="sched-skaters">10</td><td class="sched-groups">2</td></tr>
+                        <tr><td>18:35</td><td class="sched-ceremony">Award Ceremony 30 Mins</td><td class="sched-skaters"></td><td class="sched-groups"></td></tr>
+                        <tr><td>19:05</td><td class="sched-break">Break 10 mins</td><td class="sched-skaters"></td><td class="sched-groups"></td></tr>
+                        <tr><td>19:15</td><td class="sched-competition">Competition Senior Ladies Solo Style Dance</td><td class="sched-skaters">28</td><td class="sched-groups">4</td></tr>
+                        <tr><td>22:25</td><td class="sched-info">End of session</td><td class="sched-skaters"></td><td class="sched-groups"></td></tr>
+                    </tbody>
+                </table>
+            </div></div>
+        </div>
+
+        <!-- WEDNESDAY 13 MAY -->
+        <div class="schedule-day">
+            <div class="schedule-day-header" onclick="this.parentElement.classList.toggle('open')">
+                <div><h3>Wednesday 13 May</h3><span class="day-meta">Competition – Couples Dance, Solo FD, Pairs Short, Senior Solo FD</span></div>
+                <span class="accordion-icon">&#9660;</span>
+            </div>
+            <div class="schedule-day-body"><div class="table-wrapper">
+                <table class="schedule-table">
+                    <thead><tr><th>Time</th><th>Event</th><th>Skaters</th><th>Groups</th></tr></thead>
+                    <tbody>
+                        <tr><td>7:00</td><td class="sched-info">Doors Open</td><td class="sched-skaters"></td><td class="sched-groups"></td></tr>
+                        <tr><td>7:30</td><td class="sched-training">Training Cadet Men Freeskating</td><td class="sched-skaters">13</td><td class="sched-groups">3</td></tr>
+                        <tr><td>9:15</td><td class="sched-training">Training Cadet Ladies Freeskating</td><td class="sched-skaters">25</td><td class="sched-groups">5</td></tr>
+                        <tr><td>12:10</td><td class="sched-break">Break 10 mins</td><td class="sched-skaters"></td><td class="sched-groups"></td></tr>
+                        <tr><td>12:20</td><td class="sched-competition">Competition Cadet Dance Couples Style Dance</td><td class="sched-skaters">7</td><td class="sched-groups">2</td></tr>
+                        <tr><td>13:15</td><td class="sched-competition">Competition Youth Dance Couples Style Dance</td><td class="sched-skaters">4</td><td class="sched-groups">1</td></tr>
+                        <tr><td>13:45</td><td class="sched-competition">Competition Junior Ladies Solo Freedance</td><td class="sched-skaters">18</td><td class="sched-groups">3</td></tr>
+                        <tr><td>16:00</td><td class="sched-competition">Competition Junior Men Solo Freedance</td><td class="sched-skaters">9</td><td class="sched-groups">2</td></tr>
+                        <tr><td>17:10</td><td class="sched-break">Break 10 mins</td><td class="sched-skaters"></td><td class="sched-groups"></td></tr>
+                        <tr><td>17:20</td><td class="sched-competition">Competition Cadet Pairs Short Program</td><td class="sched-skaters">4</td><td class="sched-groups">1</td></tr>
+                        <tr><td>17:50</td><td class="sched-competition">Competition Youth Pairs Short Program</td><td class="sched-skaters">4</td><td class="sched-groups">1</td></tr>
+                        <tr><td>18:20</td><td class="sched-competition">Competition Junior Pairs Short Program</td><td class="sched-skaters">6</td><td class="sched-groups">2</td></tr>
+                        <tr><td>19:10</td><td class="sched-competition">Competition Senior Pairs Short Program</td><td class="sched-skaters">6</td><td class="sched-groups">2</td></tr>
+                        <tr><td>20:00</td><td class="sched-ceremony">Award Ceremony 15 Mins</td><td class="sched-skaters"></td><td class="sched-groups"></td></tr>
+                        <tr><td>20:15</td><td class="sched-competition">Competition Senior Ladies Solo Freedance</td><td class="sched-skaters">18</td><td class="sched-groups">3</td></tr>
+                        <tr><td>22:35</td><td class="sched-competition">Competition Senior Men Solo Freedance</td><td class="sched-skaters">16</td><td class="sched-groups">2</td></tr>
+                        <tr><td>0:40</td><td class="sched-ceremony">Award Ceremony 15 Mins</td><td class="sched-skaters"></td><td class="sched-groups"></td></tr>
+                        <tr><td>0:55</td><td class="sched-info">End of session</td><td class="sched-skaters"></td><td class="sched-groups"></td></tr>
+                    </tbody>
+                </table>
+            </div></div>
+        </div>
+
+        <!-- THURSDAY 14 MAY -->
+        <div class="schedule-day">
+            <div class="schedule-day-header" onclick="this.parentElement.classList.toggle('open')">
+                <div><h3>Thursday 14 May</h3><span class="day-meta">Competition – Cadet Short, Couples FD, All Pairs Long</span></div>
+                <span class="accordion-icon">&#9660;</span>
+            </div>
+            <div class="schedule-day-body"><div class="table-wrapper">
+                <table class="schedule-table">
+                    <thead><tr><th>Time</th><th>Event</th><th>Skaters</th><th>Groups</th></tr></thead>
+                    <tbody>
+                        <tr><td>7:00</td><td class="sched-info">Doors Open</td><td class="sched-skaters"></td><td class="sched-groups"></td></tr>
+                        <tr><td>7:30</td><td class="sched-training">Training Youth Ladies Freeskating</td><td class="sched-skaters">16</td><td class="sched-groups">3</td></tr>
+                        <tr><td>9:15</td><td class="sched-training">Training Youth Men Freeskating</td><td class="sched-skaters">8</td><td class="sched-groups">2</td></tr>
+                        <tr><td>10:25</td><td class="sched-training">Training Junior Dance Couples</td><td class="sched-skaters">7</td><td class="sched-groups">2</td></tr>
+                        <tr><td>11:35</td><td class="sched-training">Training Senior Dance Couples</td><td class="sched-skaters">10</td><td class="sched-groups">3</td></tr>
+                        <tr><td>13:20</td><td class="sched-break">Break 10 mins</td><td class="sched-skaters"></td><td class="sched-groups"></td></tr>
+                        <tr><td>13:30</td><td class="sched-competition">Competition Cadet Ladies Short Program</td><td class="sched-skaters">25</td><td class="sched-groups">5</td></tr>
+                        <tr><td>16:10</td><td class="sched-competition">Competition Cadet Men Short Program</td><td class="sched-skaters">13</td><td class="sched-groups">3</td></tr>
+                        <tr><td>17:35</td><td class="sched-competition">Competition Cadet Dance Couples Freedance</td><td class="sched-skaters">7</td><td class="sched-groups">2</td></tr>
+                        <tr><td>18:45</td><td class="sched-break">Break 10 mins</td><td class="sched-skaters"></td><td class="sched-groups"></td></tr>
+                        <tr><td>18:55</td><td class="sched-competition">Competition Youth Dance Couples Freedance</td><td class="sched-skaters">4</td><td class="sched-groups">1</td></tr>
+                        <tr><td>19:35</td><td class="sched-competition">Competition Cadet Pairs Long Program</td><td class="sched-skaters">4</td><td class="sched-groups">1</td></tr>
+                        <tr><td>20:15</td><td class="sched-competition">Competition Youth Pairs Long Program</td><td class="sched-skaters">4</td><td class="sched-groups">1</td></tr>
+                        <tr><td>20:55</td><td class="sched-competition">Competition Junior Pairs Long Program</td><td class="sched-skaters">6</td><td class="sched-groups">2</td></tr>
+                        <tr><td>22:05</td><td class="sched-competition">Competition Senior Pairs Long Program</td><td class="sched-skaters">6</td><td class="sched-groups">2</td></tr>
+                        <tr><td>23:15</td><td class="sched-ceremony">Award Ceremony 30 Mins</td><td class="sched-skaters"></td><td class="sched-groups"></td></tr>
+                        <tr><td>23:45</td><td class="sched-info">End of session</td><td class="sched-skaters"></td><td class="sched-groups"></td></tr>
+                    </tbody>
+                </table>
+            </div></div>
+        </div>
+
+        <!-- FRIDAY 15 MAY -->
+        <div class="schedule-day">
+            <div class="schedule-day-header" onclick="this.parentElement.classList.toggle('open')">
+                <div><h3>Friday 15 May</h3><span class="day-meta">Competition – Youth Short, Jr/Sr Dance Couples Style Dance</span></div>
+                <span class="accordion-icon">&#9660;</span>
+            </div>
+            <div class="schedule-day-body"><div class="table-wrapper">
+                <table class="schedule-table">
+                    <thead><tr><th>Time</th><th>Event</th><th>Skaters</th><th>Groups</th></tr></thead>
+                    <tbody>
+                        <tr><td>7:00</td><td class="sched-info">Doors Open</td><td class="sched-skaters"></td><td class="sched-groups"></td></tr>
+                        <tr><td>7:30</td><td class="sched-training">Training Junior Ladies Freeskating</td><td class="sched-skaters">30</td><td class="sched-groups">5</td></tr>
+                        <tr><td>10:25</td><td class="sched-training">Training Junior Men Freeskating</td><td class="sched-skaters">14</td><td class="sched-groups">3</td></tr>
+                        <tr><td>12:10</td><td class="sched-training">Training Senior Ladies Freeskating</td><td class="sched-skaters">29</td><td class="sched-groups">5</td></tr>
+                        <tr><td>15:05</td><td class="sched-training">Training Senior Men Freeskating</td><td class="sched-skaters">15</td><td class="sched-groups">3</td></tr>
+                        <tr><td>16:50</td><td class="sched-break">Break 10 mins</td><td class="sched-skaters"></td><td class="sched-groups"></td></tr>
+                        <tr><td>17:00</td><td class="sched-competition">Competition Youth Ladies Short Program</td><td class="sched-skaters">16</td><td class="sched-groups">3</td></tr>
+                        <tr><td>18:45</td><td class="sched-competition">Competition Youth Men Short Program</td><td class="sched-skaters">8</td><td class="sched-groups">2</td></tr>
+                        <tr><td>19:40</td><td class="sched-break">Break 10 mins</td><td class="sched-skaters"></td><td class="sched-groups"></td></tr>
+                        <tr><td>19:50</td><td class="sched-competition">Competition Junior Dance Couples Style Dance</td><td class="sched-skaters">7</td><td class="sched-groups">2</td></tr>
+                        <tr><td>20:45</td><td class="sched-competition">Competition Senior Dance Couples Style Dance</td><td class="sched-skaters">10</td><td class="sched-groups">3</td></tr>
+                        <tr><td>22:00</td><td class="sched-info">End of session</td><td class="sched-skaters"></td><td class="sched-groups"></td></tr>
+                    </tbody>
+                </table>
+            </div></div>
+        </div>
+
+        <!-- SATURDAY 16 MAY -->
+        <div class="schedule-day">
+            <div class="schedule-day-header" onclick="this.parentElement.classList.toggle('open')">
+                <div><h3>Saturday 16 May</h3><span class="day-meta">Competition – Jr/Sr Short, Cadet Long, Jr/Sr Dance Couples FD</span></div>
+                <span class="accordion-icon">&#9660;</span>
+            </div>
+            <div class="schedule-day-body"><div class="table-wrapper">
+                <table class="schedule-table">
+                    <thead><tr><th>Time</th><th>Event</th><th>Skaters</th><th>Groups</th></tr></thead>
+                    <tbody>
+                        <tr><td>7:00</td><td class="sched-info">Doors Open</td><td class="sched-skaters"></td><td class="sched-groups"></td></tr>
+                        <tr><td>7:30</td><td class="sched-competition">Competition Junior Ladies Short Program</td><td class="sched-skaters">30</td><td class="sched-groups">5</td></tr>
+                        <tr><td>10:50</td><td class="sched-competition">Competition Junior Men Short Program</td><td class="sched-skaters">14</td><td class="sched-groups">3</td></tr>
+                        <tr><td>12:25</td><td class="sched-break">Break 10 mins</td><td class="sched-skaters"></td><td class="sched-groups"></td></tr>
+                        <tr><td>12:35</td><td class="sched-competition">Competition Senior Ladies Short Program</td><td class="sched-skaters">29</td><td class="sched-groups">5</td></tr>
+                        <tr><td>15:50</td><td class="sched-competition">Competition Senior Men Short Program</td><td class="sched-skaters">15</td><td class="sched-groups">3</td></tr>
+                        <tr><td>17:35</td><td class="sched-competition">Competition Cadet Ladies Long</td><td class="sched-skaters">18</td><td class="sched-groups">3</td></tr>
+                        <tr><td>20:00</td><td class="sched-competition">Competition Cadet Men Long</td><td class="sched-skaters">13</td><td class="sched-groups">3</td></tr>
+                        <tr><td>21:50</td><td class="sched-competition">Competition Junior Dance Couples Freedance</td><td class="sched-skaters">7</td><td class="sched-groups">2</td></tr>
+                        <tr><td>23:00</td><td class="sched-competition">Competition Senior Dance Couples Freedance</td><td class="sched-skaters">10</td><td class="sched-groups">3</td></tr>
+                        <tr><td>0:45</td><td class="sched-ceremony">Award Ceremony 45 Mins</td><td class="sched-skaters"></td><td class="sched-groups"></td></tr>
+                        <tr><td>1:30</td><td class="sched-info">End of session</td><td class="sched-skaters"></td><td class="sched-groups"></td></tr>
+                    </tbody>
+                </table>
+            </div></div>
+        </div>
+
+        <!-- SUNDAY 17 MAY -->
+        <div class="schedule-day">
+            <div class="schedule-day-header" onclick="this.parentElement.classList.toggle('open')">
+                <div><h3>Sunday 17 May</h3><span class="day-meta">Finals – Youth / Junior / Senior Long Programs</span></div>
+                <span class="accordion-icon">&#9660;</span>
+            </div>
+            <div class="schedule-day-body"><div class="table-wrapper">
+                <table class="schedule-table">
+                    <thead><tr><th>Time</th><th>Event</th><th>Skaters</th><th>Groups</th></tr></thead>
+                    <tbody>
+                        <tr><td>8:00</td><td class="sched-info">Doors Open</td><td class="sched-skaters"></td><td class="sched-groups"></td></tr>
+                        <tr><td>8:30</td><td class="sched-competition">Competition Youth Ladies Long</td><td class="sched-skaters">16</td><td class="sched-groups">3</td></tr>
+                        <tr><td>10:50</td><td class="sched-competition">Competition Youth Men Long</td><td class="sched-skaters">8</td><td class="sched-groups">2</td></tr>
+                        <tr><td>12:05</td><td class="sched-ceremony">Award Ceremony 15 Mins</td><td class="sched-skaters"></td><td class="sched-groups"></td></tr>
+                        <tr><td>12:20</td><td class="sched-break">Break 10 mins</td><td class="sched-skaters"></td><td class="sched-groups"></td></tr>
+                        <tr><td>12:30</td><td class="sched-competition">Competition Junior Ladies Long</td><td class="sched-skaters">18</td><td class="sched-groups">3</td></tr>
+                        <tr><td>15:15</td><td class="sched-competition">Competition Junior Men Long</td><td class="sched-skaters">14</td><td class="sched-groups">3</td></tr>
+                        <tr><td>17:25</td><td class="sched-break">Break 10 mins</td><td class="sched-skaters"></td><td class="sched-groups"></td></tr>
+                        <tr><td>17:35</td><td class="sched-competition">Competition Senior Ladies Long</td><td class="sched-skaters">18</td><td class="sched-groups">3</td></tr>
+                        <tr><td>20:20</td><td class="sched-competition">Competition Senior Men Long</td><td class="sched-skaters">15</td><td class="sched-groups">3</td></tr>
+                        <tr><td>22:40</td><td class="sched-ceremony">Award Ceremony 30 Mins</td><td class="sched-skaters"></td><td class="sched-groups"></td></tr>
+                        <tr><td>23:10</td><td class="sched-info">End of session</td><td class="sched-skaters"></td><td class="sched-groups"></td></tr>
+                    </tbody>
+                </table>
+            </div></div>
+        </div>
+
+        </div><!-- end schedule-accordion -->
+
+        <div class="schedule-footnote" data-i18n="sched.footnote">Vorläufiger Zeitplan – Änderungen nach dem Technical Meeting möglich. Sessions von morgens bis spätabends.</div>
+    </section>
+
+    <section id="venue">
+        <h2 class="section-title" data-i18n="venue.title">Austragungsort</h2>
+        <p class="section-subtitle" data-i18n="venue.subtitle">Das Olympia Eissport Zentrum – eine legendäre Sportstätte am Fuße der Alpen.</p>
+
+        <div class="venue-gallery">
+            <div class="venue-gallery-item">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/OEZ.SO-Ansicht.jpg/1280px-OEZ.SO-Ansicht.jpg" alt="Olympia Eissport Zentrum Exterior" loading="lazy">
+                <div class="venue-gallery-caption">Olympia Eissport Zentrum</div>
+            </div>
+            <div class="venue-gallery-item">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/Olympia_Eissportzentrum_%28Garmisch-Partenkirchen%2C_GER%29.jpg/1280px-Olympia_Eissportzentrum_%28Garmisch-Partenkirchen%2C_GER%29.jpg" alt="Olympia Eissport Zentrum Interior" loading="lazy">
+                <div class="venue-gallery-caption">Wettkampfarena</div>
+            </div>
+            <div class="venue-gallery-item venue-gallery-large">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Alpspitze_%28Wetterstein%29.jpg/1920px-Alpspitze_%28Wetterstein%29.jpg" alt="Alpspitze Mountain View" loading="lazy">
+                <div class="venue-gallery-caption">Alpine Kulisse – Alpspitze</div>
+            </div>
+        </div>
+
+        <div class="venue-info-card card">
+            <h3 class="card-title" data-i18n="venue.name">Olympia Eissport Zentrum</h3>
+            <p class="card-text" data-i18n="venue.city">Garmisch-Partenkirchen, Bayern, Deutschland</p>
+            <p class="card-text" data-i18n="venue.distance">90 km südlich von München | 60 km von Innsbruck</p>
+
+            <div class="venue-features-minimal">
+                <div class="feature-tag" data-i18n="venue.f1">Weltklasse-Halle</div>
+                <div class="feature-tag" data-i18n="venue.f5">PA & Lichtsystem</div>
+                <div class="feature-tag" data-i18n="venue.f6">Live-Streaming</div>
+                <div class="feature-tag" data-i18n="venue.f7">Alpine Kulisse</div>
+                <div class="feature-tag" data-i18n="venue.f8">MUC/INN Anbindung</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="tickets">
+        <h2 class="section-title" data-i18n="tickets.title">Tickets</h2>
+        <p class="section-subtitle" data-i18n="tickets.subtitle">Tickets werden über unseren offiziellen Partner Eventim verkauft.</p>
+
+        <div class="tickets-info">
+            <p data-i18n="tickets.subtitle">Tickets werden über unseren offiziellen Partner Eventim verkauft.</p>
+        </div>
+
+        <div class="ticket-cards">
+            <div class="ticket-card">
+                <h3 class="card-title" data-i18n="tickets.day.type">Tageskarte</h3>
+                <div class="ticket-price">€25<span></span></div>
+                <p class="ticket-description" data-i18n="tickets.day.desc">Zugang zu einem Wettkampftag. Alle Sessions inklusive.</p>
+                <a href="https://www.eventim.de" target="_blank" class="btn btn-primary" data-i18n="tickets.eventimBtn">Auf Eventim kaufen</a>
+            </div>
+            <div class="ticket-card">
+                <h3 class="card-title" data-i18n="tickets.season.type">Dauerkarte</h3>
+                <div class="ticket-price">€120<span></span></div>
+                <p class="ticket-description" data-i18n="tickets.season.desc">Voller Zugang zu allen 7+ Wettkampftagen. Bester Preis.</p>
+                <a href="https://www.eventim.de" target="_blank" class="btn btn-primary" data-i18n="tickets.eventimBtn">Auf Eventim kaufen</a>
+            </div>
+            <div class="ticket-card">
+                <h3 class="card-title" data-i18n="tickets.weekend.type">Wochenend-Finale</h3>
+                <div class="ticket-price">€40<span></span></div>
+                <p class="ticket-description" data-i18n="tickets.weekend.desc">Samstag & Sonntag – das große Finale erleben.</p>
+                <a href="https://www.eventim.de" target="_blank" class="btn btn-primary" data-i18n="tickets.eventimBtn">Auf Eventim kaufen</a>
+            </div>
+            <div class="ticket-card">
+                <h3 class="card-title" data-i18n="tickets.vip.type">VIP Tageskarte</h3>
+                <div class="ticket-price">€55<span></span></div>
+                <p class="ticket-description" data-i18n="tickets.vip.desc">Premium-Plätze, VIP-Bereich, Welcome Drink.</p>
+                <a href="https://www.eventim.de" target="_blank" class="btn btn-primary" data-i18n="tickets.eventimBtn">Auf Eventim kaufen</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="partners">
+        <h2 class="section-title" data-i18n="partners.title">Partner & Sponsoren</h2>
+
+        <h3 style="color: #856FB0; margin-top: 2rem; margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 1px;" data-i18n="partners.sanctioned">Sanctioned by</h3>
+        <div class="partners-grid">
+            <div class="partner-item">
+                <div>
+                    <img src="https://www.worldskate.org/images/logo-skate.png" alt="World Skate" style="max-height: 80px; max-width: 180px; object-fit: contain;">
+                </div>
+            </div>
+            <div class="partner-item">
+                <div>
+                    <img src="https://www.driv.de/driv/wordpress/wp-content/uploads/2022/05/DRIV_logo.png" alt="DRIV" style="max-height: 80px; max-width: 180px; object-fit: contain;">
+                </div>
+            </div>
+        </div>
+
+        <h3 style="color: #856FB0; margin-top: 2rem; margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 1px;" data-i18n="partners.partners">Partner</h3>
+        <div class="partners-grid">
+            <div class="partner-item">
+                <div>
+                    <img src="https://www.heraldry-wiki.com/heraldrywiki/images/2/2c/Garmpart.jpg" alt="Markt Garmisch-Partenkirchen" style="max-height: 80px; max-width: 180px; object-fit: contain;">
+                </div>
+            </div>
+            <div class="partner-item">
+                <div>
+                    <img src="https://www.blsv.de/wp-content/uploads/2019/03/BLSV_Logo.png" alt="BLSV" style="max-height: 80px; max-width: 180px; object-fit: contain;">
+                </div>
+            </div>
+            <div class="partner-item">
+                <div>
+                    <img src="https://gapa-tourismus.de/images/logos/logo-dark.svg" alt="GaPa Tourismus" style="max-height: 80px; max-width: 180px; object-fit: contain;">
+                </div>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 3rem; padding: 2rem; background: #F2EBF0; border-radius: 10px;">
+            <p style="color: #555; margin-bottom: 1rem;" data-i18n="partners.sponsor">Interesse an einer Partnerschaft?</p>
+            <a href="#contact" class="btn btn-primary" data-i18n="partners.contactUs">Kontaktieren Sie uns</a>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2 class="section-title" data-i18n="contact.title">Kontakt</h2>
+        <div class="contact-grid">
+            <div class="contact-block">
+                <h4 data-i18n="contact.org">Eventorganisation</h4>
+                <p><strong data-i18n="contact.orgName">Artistic World Cup 2026</strong></p>
+                <p data-i18n="contact.orgSub">Garmisch-Partenkirchen LOC</p>
+                <p style="margin-top: 1rem;">
+                    <strong>Email:</strong><br>
+                    <a href="mailto:info@artisticworldcup2026.de" style="color: #D494C1;">info@artisticworldcup2026.de</a>
+                </p>
+            </div>
+            <div class="contact-block">
+                <h4 data-i18n="contact.venue">Austragungsort</h4>
+                <p><strong data-i18n="contact.venueName">Olympia Eissport Zentrum</strong></p>
+                <p data-i18n="contact.venueAddr">82467 Garmisch-Partenkirchen</p>
+                <p style="margin-top: 1rem;">
+                    <strong>Adresse:</strong><br>
+                    Olympia-Eissport-Zentrum<br>
+                    Richard-Strauss-Str. 5<br>
+                    82467 Garmisch-Partenkirchen, Deutschland
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h5 data-i18n="footer.event">Event</h5>
+                <ul>
+                    <li><a href="#disciplines" data-i18n="footer.disciplines">Disziplinen</a></li>
+                    <li><a href="#schedule" data-i18n="footer.schedule">Zeitplan</a></li>
+                    <li><a href="#venue" data-i18n="footer.venue">Austragungsort</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h5 data-i18n="footer.visitors">Besucher</h5>
+                <ul>
+                    <li><a href="#tickets" data-i18n="footer.tickets">Tickets</a></li>
+                    <li><a href="#" data-i18n="footer.travel">Anreise</a></li>
+                    <li><a href="#" data-i18n="footer.accommodation">Unterkünfte</a></li>
+                    <li><a href="#" data-i18n="footer.faq">FAQ</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h5 data-i18n="footer.organization">Organisation</h5>
+                <ul>
+                    <li><a href="#partners" data-i18n="footer.partners">Partner</a></li>
+                    <li><a href="#contact" data-i18n="footer.contact">Kontakt</a></li>
+                    <li><a href="#" data-i18n="footer.press">Presse</a></li>
+                    <li><a href="#" data-i18n="footer.volunteers">Freiwillige</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p data-i18n="footer.copyright">© 2026 Artistic World Cup Garmisch-Partenkirchen. Alle Rechte vorbehalten. | Sanctioned by World Skate & DRIV</p>
+        </div>
+    </footer>
+
+    <script>
+        const translations = {
+            de: {
+                'nav.about': 'Über uns', 'nav.disciplines': 'Disziplinen', 'nav.schedule': 'Zeitplan', 'nav.venue': 'Austragungsort', 'nav.tickets': 'Tickets', 'nav.contact': 'Kontakt',
+                'hero.location': 'Garmisch-Partenkirchen', 'hero.dates': '08 – 17 MAI', 'hero.disciplines': 'Halbfinale ★ Free Skating • Pairs • Solo Dance • Couples Dance', 'hero.getTickets': 'Tickets kaufen', 'hero.viewSchedule': 'Zeitplan ansehen',
+                'countdown.title': 'Countdown zum Event', 'countdown.days': 'Tage', 'countdown.hours': 'Stunden', 'countdown.minutes': 'Minuten', 'countdown.seconds': 'Sekunden',
+                'about.title': 'Über das Event', 'about.subtitle': 'Der Artistic World Cup 2026 Stage 2 (Halbfinale) bringt die besten Rollkunstläufer der Welt in die Bayerischen Alpen. Wettkampf, Qualifikation und Weltklasse-Rollkunstlauf.',
+                'about.card1.title': 'World Cup Halbfinale', 'about.card1.text': 'Stage 2 der Artistic World Cup Serie. Top 18 pro Disziplin qualifizieren sich. Bis zu 8 Athleten rücken ins Grand Finale in Cesena, Italien (1.–7. Juni) vor.',
+                'about.card2.title': 'Olympia Eissport Zentrum', 'about.card2.text': 'Weltklasse-Halle in Garmisch-Partenkirchen mit atemberaubendem Alpenblick. 90 km von München, 60 km von Innsbruck.',
+                'about.card3.title': 'Internationaler Wettkampf', 'about.card3.text': 'Athleten aus über 25 Nationen in den Kategorien Tots, Minis, Espoir, Cadet, Youth, Junior und Senior.',
+                'about.card4.title': 'Live-Streaming', 'about.card4.text': 'Volle Live-Übertragung mit 4-Kamera-Produktion (2 eigene + 2 Folgekameras). Sieh jede Performance von überall.',
+                'disc.title': 'Disziplinen', 'disc.subtitle': 'Vier Disziplinen, die Kunst und Athletik auf höchstem Niveau vereinen.',
+                'disc.free.title': 'Free Skating (Singles)', 'disc.free.text': 'Gänsehaut pur – explosive Sprünge, atemberaubende Spins und emotionale Performances, die das Publikum in ihren Bann ziehen – Short Program & Free Program.',
+                'disc.pairs.title': 'Pairs', 'disc.pairs.text': 'Adrenalin, Vertrauen und spektakuläre Elemente – waghalsige Würfe und kraftvolle Hebungen sorgen für pure Spannung und Standing Ovations – Short Program & Free Program.',
+                'disc.solo.title': 'Solo Dance', 'disc.solo.text': 'Feel the beat – mitreißende Rhythmen, starker Ausdruck und einzigartige Persönlichkeiten machen jede Performance zum Publikumsmagneten – Style Dance & Freedance.',
+                'disc.couples.title': 'Couples Dance', 'disc.couples.text': 'Magie im Duo – perfekte Harmonie, fließende Bewegungen und intensive Emotionen schaffen Momente, die unter die Haut gehen – Style Dance & Freedance.',
+                'sched.title': 'Offizieller Zeitplan', 'sched.subtitle': '10 Tage Weltklasse-Rollkunstlauf. Vorläufiger Zeitplan von World Skate.', 'sched.date': 'Datum', 'sched.day': 'Tag', 'sched.programme': 'Programm', 'sched.type': 'Typ', 'sched.footnote': 'Vorläufiger Zeitplan – Änderungen nach dem Technical Meeting möglich. Sessions von morgens bis spätabends.',
+                'venue.title': 'Austragungsort', 'venue.subtitle': 'Das Olympia Eissport Zentrum – eine legendäre Sportstätte am Fuße der Alpen.', 'venue.name': 'Olympia Eissport Zentrum', 'venue.city': 'Garmisch-Partenkirchen, Bayern, Deutschland', 'venue.distance': '90 km südlich von München | 60 km von Innsbruck',
+                'venue.f1': 'Weltklasse-Halle', 'venue.f2': 'Weiße Wettkampffläche', 'venue.f3': 'Professionelles Judge Panel', 'venue.f4': 'Kiss & Cry mit Live-Kameras', 'venue.f5': 'Voll-PA & Lichtsystem', 'venue.f6': 'Multi-Kamera Live-Streaming', 'venue.f7': 'Alpine Kulisse', 'venue.f8': 'Gute Anbindung MUC/INN',
+                'tickets.title': 'Tickets', 'tickets.subtitle': 'Tickets werden über unseren offiziellen Partner Eventim verkauft.', 'tickets.eventimBtn': 'Auf Eventim kaufen', 'tickets.day.type': 'Tageskarte', 'tickets.day.desc': 'Zugang zu einem Wettkampftag. Alle Sessions inklusive.', 'tickets.season.type': 'Dauerkarte', 'tickets.season.desc': 'Voller Zugang zu allen 7+ Wettkampftagen. Bester Preis.', 'tickets.weekend.type': 'Wochenend-Finale', 'tickets.weekend.desc': 'Samstag & Sonntag – das große Finale erleben.', 'tickets.vip.type': 'VIP Tageskarte', 'tickets.vip.desc': 'Premium-Plätze, VIP-Bereich, Welcome Drink.',
+                'partners.title': 'Partner & Sponsoren', 'partners.sanctioned': 'Sanctioned by', 'partners.partners': 'Partner', 'partners.sponsor': 'Interesse an einer Partnerschaft?', 'partners.contactUs': 'Kontaktieren Sie uns',
+                'contact.title': 'Kontakt', 'contact.org': 'Eventorganisation', 'contact.orgName': 'Artistic World Cup 2026', 'contact.orgSub': 'Garmisch-Partenkirchen LOC', 'contact.venue': 'Austragungsort', 'contact.venueName': 'Olympia Eissport Zentrum', 'contact.venueAddr': '82467 Garmisch-Partenkirchen',
+                'footer.event': 'Event', 'footer.about': 'Über uns', 'footer.disciplines': 'Disziplinen', 'footer.schedule': 'Zeitplan', 'footer.venue': 'Austragungsort', 'footer.visitors': 'Besucher', 'footer.tickets': 'Tickets', 'footer.travel': 'Anreise', 'footer.accommodation': 'Unterkünfte', 'footer.faq': 'FAQ', 'footer.organization': 'Organisation', 'footer.partners': 'Partner', 'footer.contact': 'Kontakt', 'footer.press': 'Presse', 'footer.volunteers': 'Freiwillige', 'footer.copyright': '© 2026 Artistic World Cup Garmisch-Partenkirchen. Alle Rechte vorbehalten. | Sanctioned by World Skate & DRIV'
+            },
+            en: {
+                'nav.about': 'About', 'nav.disciplines': 'Disciplines', 'nav.schedule': 'Schedule', 'nav.venue': 'Venue', 'nav.tickets': 'Tickets', 'nav.contact': 'Contact',
+                'hero.location': 'Garmisch-Partenkirchen', 'hero.dates': '08 – 17 MAY', 'hero.disciplines': 'Semi Finals ★ Free Skating • Pairs • Solo Dance • Couples Dance', 'hero.getTickets': 'Get Tickets', 'hero.viewSchedule': 'View Schedule',
+                'countdown.title': 'Countdown to Event', 'countdown.days': 'Days', 'countdown.hours': 'Hours', 'countdown.minutes': 'Minutes', 'countdown.seconds': 'Seconds',
+                'about.title': 'About the Event', 'about.subtitle': 'The Artistic World Cup 2026 Stage 2 (Semi-Final) brings the world\'s best artistic roller skaters to the Bavarian Alps. Compete, qualify, and experience world-class roller skating.',
+                'about.card1.title': 'World Cup Semi-Final', 'about.card1.text': 'Stage 2 of the Artistic World Cup series. Top 18 per discipline qualify. Up to 8 athletes advance to the Grand Finale in Cesena, Italy (June 1–7).',
+                'about.card2.title': 'Olympia Eissport Zentrum', 'about.card2.text': 'World-class indoor arena in Garmisch-Partenkirchen with stunning alpine views. 90 km from Munich, 60 km from Innsbruck.',
+                'about.card3.title': 'International Competition', 'about.card3.text': 'Athletes from 25+ nations in Tots, Minis, Espoir, Cadet, Youth, Junior, and Senior categories.',
+                'about.card4.title': 'Live Streaming', 'about.card4.text': 'Full live coverage with 4-camera production (2 own + 2 follow cameras). Watch every performance from anywhere.',
+                'disc.title': 'Disciplines', 'disc.subtitle': 'Four disciplines showcasing artistry and athleticism at the highest level.',
+                'disc.free.title': 'Free Skating (Singles)', 'disc.free.text': 'Pure goosebumps – explosive jumps, breathtaking spins and emotional performances that captivate the audience – Short Program & Free Program.',
+                'disc.pairs.title': 'Pairs', 'disc.pairs.text': 'Adrenaline, trust and spectacular elements – daring throws and powerful lifts create pure excitement and standing ovations – Short Program & Free Program.',
+                'disc.solo.title': 'Solo Dance', 'disc.solo.text': 'Feel the beat – captivating rhythms, powerful expression and unique personalities make every performance a crowd favourite – Style Dance & Freedance.',
+                'disc.couples.title': 'Couples Dance', 'disc.couples.text': 'Magic in motion – perfect harmony, flowing movements and intense emotions create moments that get under your skin – Style Dance & Freedance.',
+                'sched.title': 'Official Schedule', 'sched.subtitle': '10 days of world-class artistic roller skating. Provisional schedule by World Skate.', 'sched.date': 'Date', 'sched.day': 'Day', 'sched.programme': 'Programme', 'sched.type': 'Type', 'sched.footnote': 'Provisional Schedule – subject to change after Technical Meeting. Sessions run from early morning until late evening.',
+                'venue.title': 'Venue', 'venue.subtitle': 'The Olympia Eissport Zentrum – a legendary sports venue at the foot of the Alps.', 'venue.name': 'Olympia Eissport Zentrum', 'venue.city': 'Garmisch-Partenkirchen, Bavaria, Germany', 'venue.distance': '90 km south of Munich | 60 km from Innsbruck',
+                'venue.f1': 'World-class indoor arena', 'venue.f2': 'White competition floor', 'venue.f3': 'Professional Judge Panel', 'venue.f4': 'Kiss & Cry with live cameras', 'venue.f5': 'Full PA & lighting system', 'venue.f6': 'Multi-camera live streaming', 'venue.f7': 'Alpine setting', 'venue.f8': 'Easy access MUC/INN airports',
+                'tickets.title': 'Tickets', 'tickets.subtitle': 'Tickets are sold through our official partner Eventim.', 'tickets.eventimBtn': 'Buy on Eventim', 'tickets.day.type': 'Day Pass', 'tickets.day.desc': 'Access to one competition day. All sessions included.', 'tickets.season.type': 'Season Pass', 'tickets.season.desc': 'Full access to all 7+ competition days. Best value.', 'tickets.weekend.type': 'Weekend Finals', 'tickets.weekend.desc': 'Saturday & Sunday – experience the grand finale.', 'tickets.vip.type': 'VIP Day Pass', 'tickets.vip.desc': 'Premium seats, VIP area, welcome drink.',
+                'partners.title': 'Partners & Sponsors', 'partners.sanctioned': 'Sanctioned by', 'partners.partners': 'Partners', 'partners.sponsor': 'Interested in becoming a sponsor?', 'partners.contactUs': 'Contact us',
+                'contact.title': 'Contact', 'contact.org': 'Event Organization', 'contact.orgName': 'Artistic World Cup 2026', 'contact.orgSub': 'Garmisch-Partenkirchen LOC', 'contact.venue': 'Venue', 'contact.venueName': 'Olympia Eissport Zentrum', 'contact.venueAddr': '82467 Garmisch-Partenkirchen',
+                'footer.event': 'Event', 'footer.about': 'About', 'footer.disciplines': 'Disciplines', 'footer.schedule': 'Schedule', 'footer.venue': 'Venue', 'footer.visitors': 'Visitors', 'footer.tickets': 'Tickets', 'footer.travel': 'Travel Info', 'footer.accommodation': 'Accommodation', 'footer.faq': 'FAQ', 'footer.organization': 'Organization', 'footer.partners': 'Partners', 'footer.contact': 'Contact', 'footer.press': 'Press', 'footer.volunteers': 'Volunteers', 'footer.copyright': '© 2026 Artistic World Cup Garmisch-Partenkirchen. All rights reserved. | Sanctioned by World Skate & DRIV'
+            },
+            it: {
+                'nav.about': 'Chi siamo', 'nav.disciplines': 'Discipline', 'nav.schedule': 'Programma', 'nav.venue': 'Sede', 'nav.tickets': 'Biglietti', 'nav.contact': 'Contatti',
+                'hero.location': 'Garmisch-Partenkirchen', 'hero.dates': '08 – 17 MAGGIO', 'hero.disciplines': 'Semifinali ★ Free Skating • Pairs • Solo Dance • Couples Dance', 'hero.getTickets': 'Acquista biglietti', 'hero.viewSchedule': 'Vedi programma',
+                'countdown.title': 'Conto alla rovescia', 'countdown.days': 'Giorni', 'countdown.hours': 'Ore', 'countdown.minutes': 'Minuti', 'countdown.seconds': 'Secondi',
+                'about.title': 'L\'Evento', 'about.subtitle': 'L\'Artistic World Cup 2026 Stage 2 (Semifinale) porta i migliori pattinatori artistici a rotelle del mondo nelle Alpi Bavaresi. Competizione, qualificazione e pattinaggio artistico di livello mondiale.',
+                'about.card1.title': 'Semifinale World Cup', 'about.card1.text': 'Stage 2 della serie Artistic World Cup. I migliori 18 per disciplina si qualificano. Fino a 8 atleti avanzano alla Gran Finale a Cesena, Italia (1–7 giugno).',
+                'about.card2.title': 'Olympia Eissport Zentrum', 'about.card2.text': 'Arena indoor di livello mondiale a Garmisch-Partenkirchen con vista alpina mozzafiato. 90 km da Monaco, 60 km da Innsbruck.',
+                'about.card3.title': 'Competizione Internazionale', 'about.card3.text': 'Atleti da oltre 25 nazioni nelle categorie Tots, Minis, Espoir, Cadet, Youth, Junior e Senior.',
+                'about.card4.title': 'Streaming Live', 'about.card4.text': 'Copertura live completa con produzione a 4 telecamere (2 proprie + 2 di inseguimento). Guarda ogni esibizione da ovunque.',
+                'disc.title': 'Discipline', 'disc.subtitle': 'Quattro discipline che uniscono arte e atletismo ai massimi livelli.',
+                'disc.free.title': 'Free Skating (Singles)', 'disc.free.text': 'Pelle d\'oca – salti esplosivi, trottole mozzafiato e performance emozionanti che conquistano il pubblico – Short Program & Free Program.',
+                'disc.pairs.title': 'Pairs', 'disc.pairs.text': 'Adrenalina, fiducia ed elementi spettacolari – lanci audaci e sollevamenti potenti creano pura emozione e standing ovation – Short Program & Free Program.',
+                'disc.solo.title': 'Solo Dance', 'disc.solo.text': 'Feel the beat – ritmi travolgenti, forte espressione e personalità uniche rendono ogni performance un magnete per il pubblico – Style Dance & Freedance.',
+                'disc.couples.title': 'Couples Dance', 'disc.couples.text': 'Magia in coppia – armonia perfetta, movimenti fluidi ed emozioni intense creano momenti indimenticabili – Style Dance & Freedance.',
+                'sched.title': 'Programma Ufficiale', 'sched.subtitle': '10 giorni di pattinaggio artistico a rotelle di livello mondiale. Programma provvisorio di World Skate.', 'sched.date': 'Data', 'sched.day': 'Giorno', 'sched.programme': 'Programma', 'sched.type': 'Tipo', 'sched.footnote': 'Programma provvisorio – soggetto a modifiche dopo il Technical Meeting. Le sessioni si svolgono dalla mattina presto alla sera tardi.',
+                'venue.title': 'Sede', 'venue.subtitle': 'L\'Olympia Eissport Zentrum – una leggendaria sede sportiva ai piedi delle Alpi.', 'venue.name': 'Olympia Eissport Zentrum', 'venue.city': 'Garmisch-Partenkirchen, Baviera, Germania', 'venue.distance': '90 km a sud di Monaco | 60 km da Innsbruck',
+                'venue.f1': 'Arena indoor di livello mondiale', 'venue.f2': 'Pista da competizione bianca', 'venue.f3': 'Judge Panel professionale', 'venue.f4': 'Kiss & Cry con telecamere live', 'venue.f5': 'Impianto audio e luci completo', 'venue.f6': 'Streaming live multi-camera', 'venue.f7': 'Scenario alpino', 'venue.f8': 'Facile accesso aeroporti MUC/INN',
+                'tickets.title': 'Biglietti', 'tickets.subtitle': 'I biglietti sono venduti tramite il nostro partner ufficiale Eventim.', 'tickets.eventimBtn': 'Acquista su Eventim', 'tickets.day.type': 'Biglietto giornaliero', 'tickets.day.desc': 'Accesso a una giornata di competizione. Tutte le sessioni incluse.', 'tickets.season.type': 'Abbonamento', 'tickets.season.desc': 'Accesso completo a tutti i 7+ giorni di competizione. Miglior prezzo.', 'tickets.weekend.type': 'Finale Weekend', 'tickets.weekend.desc': 'Sabato e Domenica – vivi la grande finale.', 'tickets.vip.type': 'VIP Giornaliero', 'tickets.vip.desc': 'Posti premium, area VIP, drink di benvenuto.',
+                'partners.title': 'Partner e Sponsor', 'partners.sanctioned': 'Sanctioned by', 'partners.partners': 'Partner', 'partners.sponsor': 'Interessati a diventare sponsor?', 'partners.contactUs': 'Contattateci',
+                'contact.title': 'Contatti', 'contact.org': 'Organizzazione Evento', 'contact.orgName': 'Artistic World Cup 2026', 'contact.orgSub': 'Garmisch-Partenkirchen LOC', 'contact.venue': 'Sede', 'contact.venueName': 'Olympia Eissport Zentrum', 'contact.venueAddr': '82467 Garmisch-Partenkirchen',
+                'footer.event': 'Evento', 'footer.about': 'Chi siamo', 'footer.disciplines': 'Discipline', 'footer.schedule': 'Programma', 'footer.venue': 'Sede', 'footer.visitors': 'Visitatori', 'footer.tickets': 'Biglietti', 'footer.travel': 'Come arrivare', 'footer.accommodation': 'Alloggio', 'footer.faq': 'FAQ', 'footer.organization': 'Organizzazione', 'footer.partners': 'Partner', 'footer.contact': 'Contatti', 'footer.press': 'Stampa', 'footer.volunteers': 'Volontari', 'footer.copyright': '© 2026 Artistic World Cup Garmisch-Partenkirchen. Tutti i diritti riservati. | Sanctioned by World Skate & DRIV'
+            },
+            es: {
+                'nav.about': 'Acerca de', 'nav.disciplines': 'Disciplinas', 'nav.schedule': 'Programa', 'nav.venue': 'Sede', 'nav.tickets': 'Entradas', 'nav.contact': 'Contacto',
+                'hero.location': 'Garmisch-Partenkirchen', 'hero.dates': '08 – 17 MAYO', 'hero.disciplines': 'Semifinales ★ Free Skating • Pairs • Solo Dance • Couples Dance', 'hero.getTickets': 'Comprar entradas', 'hero.viewSchedule': 'Ver programa',
+                'countdown.title': 'Cuenta regresiva', 'countdown.days': 'Días', 'countdown.hours': 'Horas', 'countdown.minutes': 'Minutos', 'countdown.seconds': 'Segundos',
+                'about.title': 'Sobre el Evento', 'about.subtitle': 'El Artistic World Cup 2026 Stage 2 (Semifinal) trae a los mejores patinadores artísticos sobre ruedas del mundo a los Alpes Bávaros. Competición, clasificación y patinaje artístico de clase mundial.',
+                'about.card1.title': 'Semifinal World Cup', 'about.card1.text': 'Stage 2 de la serie Artistic World Cup. Los 18 mejores por disciplina se clasifican. Hasta 8 atletas avanzan a la Gran Final en Cesena, Italia (1–7 junio).',
+                'about.card2.title': 'Olympia Eissport Zentrum', 'about.card2.text': 'Arena indoor de clase mundial en Garmisch-Partenkirchen con impresionantes vistas alpinas. 90 km de Múnich, 60 km de Innsbruck.',
+                'about.card3.title': 'Competición Internacional', 'about.card3.text': 'Atletas de más de 25 naciones en categorías Tots, Minis, Espoir, Cadet, Youth, Junior y Senior.',
+                'about.card4.title': 'Streaming en Vivo', 'about.card4.text': 'Cobertura en vivo completa con producción de 4 cámaras (2 propias + 2 de seguimiento). Ve cada actuación desde cualquier lugar.',
+                'disc.title': 'Disciplinas', 'disc.subtitle': 'Cuatro disciplinas que combinan arte y atletismo al más alto nivel.',
+                'disc.free.title': 'Free Skating (Singles)', 'disc.free.text': 'Piel de gallina – saltos explosivos, giros impresionantes y actuaciones emotivas que cautivan al público – Short Program & Free Program.',
+                'disc.pairs.title': 'Pairs', 'disc.pairs.text': 'Adrenalina, confianza y elementos espectaculares – lanzamientos audaces y elevaciones poderosas generan pura emoción y ovaciones – Short Program & Free Program.',
+                'disc.solo.title': 'Solo Dance', 'disc.solo.text': 'Feel the beat – ritmos cautivadores, fuerte expresión y personalidades únicas convierten cada actuación en un imán para el público – Style Dance & Freedance.',
+                'disc.couples.title': 'Couples Dance', 'disc.couples.text': 'Magia en pareja – armonía perfecta, movimientos fluidos y emociones intensas crean momentos inolvidables – Style Dance & Freedance.',
+                'sched.title': 'Programa Oficial', 'sched.subtitle': '10 días de patinaje artístico sobre ruedas de clase mundial. Programa provisional de World Skate.', 'sched.date': 'Fecha', 'sched.day': 'Día', 'sched.programme': 'Programa', 'sched.type': 'Tipo', 'sched.footnote': 'Programa provisional – sujeto a cambios tras la Reunión Técnica. Las sesiones van desde la mañana temprano hasta la noche.',
+                'venue.title': 'Sede', 'venue.subtitle': 'El Olympia Eissport Zentrum – un legendario recinto deportivo a los pies de los Alpes.', 'venue.name': 'Olympia Eissport Zentrum', 'venue.city': 'Garmisch-Partenkirchen, Baviera, Alemania', 'venue.distance': '90 km al sur de Múnich | 60 km de Innsbruck',
+                'venue.f1': 'Arena indoor de clase mundial', 'venue.f2': 'Pista de competición blanca', 'venue.f3': 'Panel de jueces profesional', 'venue.f4': 'Kiss & Cry con cámaras en vivo', 'venue.f5': 'Sistema completo de sonido e iluminación', 'venue.f6': 'Streaming en vivo multi-cámara', 'venue.f7': 'Entorno alpino', 'venue.f8': 'Fácil acceso aeropuertos MUC/INN',
+                'tickets.title': 'Entradas', 'tickets.subtitle': 'Las entradas se venden a través de nuestro socio oficial Eventim.', 'tickets.eventimBtn': 'Comprar en Eventim', 'tickets.day.type': 'Entrada de día', 'tickets.day.desc': 'Acceso a un día de competición. Todas las sesiones incluidas.', 'tickets.season.type': 'Abono completo', 'tickets.season.desc': 'Acceso total a todos los 7+ días de competición. Mejor precio.', 'tickets.weekend.type': 'Fin de semana Final', 'tickets.weekend.desc': 'Sábado y Domingo – vive la gran final.', 'tickets.vip.type': 'VIP Día', 'tickets.vip.desc': 'Asientos premium, zona VIP, bebida de bienvenida.',
+                'partners.title': 'Socios y Patrocinadores', 'partners.sanctioned': 'Sanctioned by', 'partners.partners': 'Socios', 'partners.sponsor': '¿Interesado en ser patrocinador?', 'partners.contactUs': 'Contáctenos',
+                'contact.title': 'Contacto', 'contact.org': 'Organización del Evento', 'contact.orgName': 'Artistic World Cup 2026', 'contact.orgSub': 'Garmisch-Partenkirchen LOC', 'contact.venue': 'Sede', 'contact.venueName': 'Olympia Eissport Zentrum', 'contact.venueAddr': '82467 Garmisch-Partenkirchen',
+                'footer.event': 'Evento', 'footer.about': 'Acerca de', 'footer.disciplines': 'Disciplinas', 'footer.schedule': 'Programa', 'footer.venue': 'Sede', 'footer.visitors': 'Visitantes', 'footer.tickets': 'Entradas', 'footer.travel': 'Cómo llegar', 'footer.accommodation': 'Alojamiento', 'footer.faq': 'FAQ', 'footer.organization': 'Organización', 'footer.partners': 'Socios', 'footer.contact': 'Contacto', 'footer.press': 'Prensa', 'footer.volunteers': 'Voluntarios', 'footer.copyright': '© 2026 Artistic World Cup Garmisch-Partenkirchen. Todos los derechos reservados. | Sanctioned by World Skate & DRIV'
+            },
+            pt: {
+                'nav.about': 'Sobre', 'nav.disciplines': 'Disciplinas', 'nav.schedule': 'Programa', 'nav.venue': 'Local', 'nav.tickets': 'Bilhetes', 'nav.contact': 'Contacto',
+                'hero.location': 'Garmisch-Partenkirchen', 'hero.dates': '08 – 17 MAIO', 'hero.disciplines': 'Semifinais ★ Free Skating • Pairs • Solo Dance • Couples Dance', 'hero.getTickets': 'Comprar bilhetes', 'hero.viewSchedule': 'Ver programa',
+                'countdown.title': 'Contagem regressiva', 'countdown.days': 'Dias', 'countdown.hours': 'Horas', 'countdown.minutes': 'Minutos', 'countdown.seconds': 'Segundos',
+                'about.title': 'Sobre o Evento', 'about.subtitle': 'O Artistic World Cup 2026 Stage 2 (Semifinal) traz os melhores patinadores artísticos sobre rodas do mundo aos Alpes da Baviera. Competição, classificação e patinação artística de classe mundial.',
+                'about.card1.title': 'Semifinal World Cup', 'about.card1.text': 'Stage 2 da série Artistic World Cup. Os 18 melhores por disciplina se classificam. Até 8 atletas avançam para a Grande Final em Cesena, Itália (1–7 junho).',
+                'about.card2.title': 'Olympia Eissport Zentrum', 'about.card2.text': 'Arena indoor de classe mundial em Garmisch-Partenkirchen com vistas alpinas deslumbrantes. 90 km de Munique, 60 km de Innsbruck.',
+                'about.card3.title': 'Competição Internacional', 'about.card3.text': 'Atletas de mais de 25 nações nas categorias Tots, Minis, Espoir, Cadet, Youth, Junior e Senior.',
+                'about.card4.title': 'Transmissão ao Vivo', 'about.card4.text': 'Cobertura ao vivo completa com produção de 4 câmeras (2 próprias + 2 de acompanhamento). Assista a cada performance de qualquer lugar.',
+                'disc.title': 'Disciplinas', 'disc.subtitle': 'Quatro disciplinas que combinam arte e atletismo no mais alto nível.',
+                'disc.free.title': 'Free Skating (Singles)', 'disc.free.text': 'Arrepio puro – saltos explosivos, piruetas de tirar o fôlego e performances emocionantes que cativam o público – Short Program & Free Program.',
+                'disc.pairs.title': 'Pairs', 'disc.pairs.text': 'Adrenalina, confiança e elementos espetaculares – lançamentos audaciosos e elevações poderosas criam pura emoção e ovações de pé – Short Program & Free Program.',
+                'disc.solo.title': 'Solo Dance', 'disc.solo.text': 'Feel the beat – ritmos envolventes, forte expressão e personalidades únicas tornam cada performance num íman para o público – Style Dance & Freedance.',
+                'disc.couples.title': 'Couples Dance', 'disc.couples.text': 'Magia a dois – harmonia perfeita, movimentos fluidos e emoções intensas criam momentos inesquecíveis – Style Dance & Freedance.',
+                'sched.title': 'Programa Oficial', 'sched.subtitle': '10 dias de patinação artística sobre rodas de classe mundial. Programa provisório da World Skate.', 'sched.date': 'Data', 'sched.day': 'Dia', 'sched.programme': 'Programa', 'sched.type': 'Tipo', 'sched.footnote': 'Programa provisório – sujeito a alterações após a Reunião Técnica. As sessões decorrem desde o início da manhã até ao final da noite.',
+                'venue.title': 'Local', 'venue.subtitle': 'O Olympia Eissport Zentrum – um lendário recinto desportivo aos pés dos Alpes.', 'venue.name': 'Olympia Eissport Zentrum', 'venue.city': 'Garmisch-Partenkirchen, Baviera, Alemanha', 'venue.distance': '90 km ao sul de Munique | 60 km de Innsbruck',
+                'venue.f1': 'Arena indoor de classe mundial', 'venue.f2': 'Pista de competição branca', 'venue.f3': 'Painel de juízes profissional', 'venue.f4': 'Kiss & Cry com câmeras ao vivo', 'venue.f5': 'Sistema completo de som e iluminação', 'venue.f6': 'Streaming ao vivo multi-câmera', 'venue.f7': 'Cenário alpino', 'venue.f8': 'Fácil acesso aeroportos MUC/INN',
+                'tickets.title': 'Bilhetes', 'tickets.subtitle': 'Os bilhetes são vendidos através do nosso parceiro oficial Eventim.', 'tickets.eventimBtn': 'Comprar no Eventim', 'tickets.day.type': 'Bilhete diário', 'tickets.day.desc': 'Acesso a um dia de competição. Todas as sessões incluídas.', 'tickets.season.type': 'Passe completo', 'tickets.season.desc': 'Acesso total a todos os 7+ dias de competição. Melhor preço.', 'tickets.weekend.type': 'Final de Semana', 'tickets.weekend.desc': 'Sábado e Domingo – viva a grande final.', 'tickets.vip.type': 'VIP Diário', 'tickets.vip.desc': 'Lugares premium, zona VIP, bebida de boas-vindas.',
+                'partners.title': 'Parceiros e Patrocinadores', 'partners.sanctioned': 'Sanctioned by', 'partners.partners': 'Parceiros', 'partners.sponsor': 'Interessado em ser patrocinador?', 'partners.contactUs': 'Contacte-nos',
+                'contact.title': 'Contacto', 'contact.org': 'Organização do Evento', 'contact.orgName': 'Artistic World Cup 2026', 'contact.orgSub': 'Garmisch-Partenkirchen LOC', 'contact.venue': 'Local', 'contact.venueName': 'Olympia Eissport Zentrum', 'contact.venueAddr': '82467 Garmisch-Partenkirchen',
+                'footer.event': 'Evento', 'footer.about': 'Sobre', 'footer.disciplines': 'Disciplinas', 'footer.schedule': 'Programa', 'footer.venue': 'Local', 'footer.visitors': 'Visitantes', 'footer.tickets': 'Bilhetes', 'footer.travel': 'Como chegar', 'footer.accommodation': 'Alojamento', 'footer.faq': 'FAQ', 'footer.organization': 'Organização', 'footer.partners': 'Parceiros', 'footer.contact': 'Contacto', 'footer.press': 'Imprensa', 'footer.volunteers': 'Voluntários', 'footer.copyright': '© 2026 Artistic World Cup Garmisch-Partenkirchen. Todos os direitos reservados. | Sanctioned by World Skate & DRIV'
+            }
+        };
+
+        let currentLanguage = 'de';
+
+        function updateTranslations(lang) {
+            currentLanguage = lang;
+            document.documentElement.lang = lang;
+            document.querySelectorAll('[data-i18n]').forEach(element => {
+                const key = element.getAttribute('data-i18n');
+                if (translations[lang] && translations[lang][key]) {
+                    element.textContent = translations[lang][key];
+                }
+            });
+        }
+
+        document.getElementById('langSelect').addEventListener('change', function() {
+            updateTranslations(this.value);
+        });
+
+        // Hamburger Menu
+        const menuToggle = document.getElementById('menuToggle');
+        const navLinks = document.getElementById('navLinks');
+
+        menuToggle.addEventListener('click', () => {
+            menuToggle.classList.toggle('active');
+            navLinks.classList.toggle('open');
+        });
+
+        // Close menu when clicking a link
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                menuToggle.classList.remove('active');
+                navLinks.classList.remove('open');
+            });
+        });
+
+        function updateCountdown() {
+            const eventDate = new Date('2026-05-08T09:00:00+02:00').getTime();
+            const now = new Date().getTime();
+            const difference = eventDate - now;
+
+            const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+            document.getElementById('days').textContent = days;
+            document.getElementById('hours').textContent = hours;
+            document.getElementById('minutes').textContent = minutes;
+            document.getElementById('seconds').textContent = seconds;
+        }
+
+        updateCountdown();
+        setInterval(updateCountdown, 1000);
+
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                if (href !== '#' && document.querySelector(href)) {
+                    e.preventDefault();
+                    document.querySelector(href).scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+
+        // Load poster image
+        // Hero poster image is now set via CSS gradient - banner can be added by updating the comment above
+    </script>
+</body>
+</html>
