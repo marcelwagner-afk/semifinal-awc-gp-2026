@@ -107,17 +107,15 @@
         .hero {
             position: relative;
             overflow: hidden;
-            background: #856FB0;
-            min-height: 50vh;
+            background: linear-gradient(135deg, #6B5589 0%, #856FB0 40%, #D494C1 100%);
         }
 
         .hero-poster {
             width: 100%;
-            height: 100%;
-            min-height: 50vh;
             display: block;
-            object-fit: cover;
-            object-position: center top;
+            object-fit: contain;
+            object-position: center center;
+            background: linear-gradient(135deg, #6B5589 0%, #856FB0 40%, #D494C1 100%);
         }
 
         /* Fallback gradient when no poster image */
@@ -130,13 +128,8 @@
         }
 
         .hero-overlay {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            z-index: 1;
-            background: linear-gradient(to top, rgba(30,18,69,0.8) 0%, rgba(30,18,69,0.3) 60%, transparent 100%);
-            padding: 3rem 2rem 2rem;
+            background: linear-gradient(135deg, #6B5589 0%, #856FB0 50%, #D494C1 100%);
+            padding: 1.5rem 2rem 2rem;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -849,14 +842,6 @@
             }
 
             /* --- Hero Banner --- */
-            .hero {
-                min-height: 60vh;
-            }
-
-            .hero-poster {
-                min-height: 60vh;
-            }
-
             .hero-overlay {
                 padding: 2rem 1rem 1.5rem;
             }
@@ -1121,14 +1106,6 @@
             }
 
             /* Hero */
-            .hero {
-                min-height: 65vh;
-            }
-
-            .hero-poster {
-                min-height: 65vh;
-            }
-
             .hero-title {
                 font-size: 1.6rem;
                 letter-spacing: 0.5px;
